@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 
-import{link} from 'react-router-dom';
+import{Link} from 'react-router-dom';
 
 const endpoint = 'http://localhost:8000/api'
 
@@ -18,7 +18,7 @@ setProducts(response.data)
 
 }
 
-const deleteProducts = async(id) => {
+const deleteProduct = async(id) => {
 await axios.delete(`${endpoint}/products/${id}`)
 getAllProducts()
 }
@@ -44,7 +44,7 @@ getAllProducts()
                             <td>{product.price} </td>
                             <td>{product.stock} </td>
                             <td>
-                                <link to={`/edit/${product.id}`} className='btn btn-warning' >Edit</link>
+                                <Link to={`/edit/${product.id}`} className='btn btn-warning' >Edit</Link>
                                 <button onClick={()=>deleteProduct(product.id)} className='btn btn-danger' >Delete</button>
                             </td>
                         </tr>

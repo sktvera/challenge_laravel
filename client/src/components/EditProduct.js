@@ -1,8 +1,8 @@
 import axios from "axios";
-import React,{useState, useRffect, useEffect} from "react";
+import React,{useEffect, useState} from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const endpoint = 'http://localhost:8000/api/product'
+const endpoint = 'http://localhost:8000/api/product/'
 
 const EditProduct = () =>{
     const [description, setDescription] = useState('')
@@ -68,7 +68,7 @@ const EditProduct = () =>{
                 />
 
             </div>
-            <button type='submit' className='btn btn-primary'>Store</button>
+            <button type='submit' className='btn btn-primary'>update</button>
         </form>
     </div>
     )

@@ -4,8 +4,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //import components
 import ShowProducts from './components/ShowProducts';
-import CreateProducts from '/components/CreateProducts';
-import EditProduct from '/components/EditProduct';
+import CreateProducts from './components/CreateProducts';
+import EditProduct from './components/EditProduct';
 
 function App() {
   return (
