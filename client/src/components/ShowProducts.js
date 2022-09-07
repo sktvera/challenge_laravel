@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 
-import{link} from 'react-router-dom'
+import{link} from 'react-router-dom';
 
 const endpoint = 'http://localhost:8000/api'
 
@@ -14,7 +14,7 @@ const ShowProducts = () =>{
 
 const getAllProducts = async () =>{
 const response = await axios.get(`${endpoint}/products`)
-setProducts(response)
+setProducts(response.data)
 
 }
 
@@ -44,7 +44,7 @@ getAllProducts()
                             <td>{product.price} </td>
                             <td>{product.stock} </td>
                             <td>
-                                <Link to={`/edit/${product.id}`} className='btn btn-warning' >Edit</Link>
+                                <link to={`/edit/${product.id}`} className='btn btn-warning' >Edit</link>
                                 <button onClick={()=>deleteProduct(product.id)} className='btn btn-danger' >Delete</button>
                             </td>
                         </tr>
