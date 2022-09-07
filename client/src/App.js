@@ -1,10 +1,9 @@
-
-import './App.css';
-
+import './customcss/style.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-//import components
+
+//importar nuestros componentes
 import ShowProducts from './components/ShowProducts';
-import CreateProducts from './components/CreateProducts';
+import CreateProduct from './components/CreateProduct';
 import EditProduct from './components/EditProduct';
 
 function App() {
@@ -12,13 +11,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-            <Route path='' element={ <ShowProducts/> } />
-            <Route path='/create' element={ <CreateProducts/> }/>
-            <Route path='/edit/:id' element={ <EditProduct/> }/>
-            <Route/>
+          <Route path='/' element={ <ShowProducts/> } />
+          <Route path='/create' element={ <CreateProduct/> } />
+          <Route path='/edit/:id' element={ <EditProduct/> } />
         </Routes>
-      
-      </BrowserRouter>
+      </BrowserRouter>      
     </div>
   );
 }

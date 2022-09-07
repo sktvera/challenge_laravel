@@ -1,41 +1,25 @@
-import axios from "axios";
-import React, {useState, useEffect} from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import axios from 'axios'
+import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const endpoint = 'http://localhost:8000/api/product/'
+const endpoint = 'http://localhost:8000/api/product'
 
-const EditProduct = () => {
+const CreateProduct = () => {
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState(0)
     const [stock, setStock] = useState(0)
     const navigate = useNavigate()
-    const {id} = useParams()
 
-    const update = async (e) => {
+    const store = async (e) => {
         e.preventDefault()
-        await axios.put(`${endpoint}${id}`, {
-            description: description,
-            price: price,
-            stock: stock
-        })
+        await axios.post(endpoint, {description: description, price: price, stock: stock})
         navigate('/')
     }
     
-    useEffect( () =>{
-        const getProductById = async () => {
-            const response = await axios.get(`${endpoint}${id}`)
-            setDescription(response.data.description)
-            setPrice(response.data.price)
-            setStock(response.data.stock)
-        }
-        getProductById()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [] )
-
-    return (
-        <div>
-        <h3>Edit Product</h3>
-        <form onSubmit={update}>
+  return (
+    <div>
+        <h3>Create Product</h3>
+        <form onSubmit={store}>
             <div className='mb-3'>
                 <label className='form-label'>Description</label>
                 <input 
@@ -63,10 +47,10 @@ const EditProduct = () => {
                     className='form-control'
                 />
             </div>
-            <button type='submit' className='btn btn-primary'>Update</button>
+            <button type='submit' className='btn btn-primary'>Store</button>
         </form>
     </div>
-    )
+  )
 }
 
-export default EditProduct
+export default CreateProduct
