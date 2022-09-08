@@ -33,9 +33,9 @@ const EditProduct = () => {
     }, [] )
 
     return (
-        <div>
+        <div className='grilla'>
         <h3>Edit Product</h3>
-        <form onSubmit={update}>
+        <form className='gridOne' onSubmit={update}>
             <div className='mb-3'>
                 <label className='form-label'>Description</label>
                 <input 
@@ -63,7 +63,10 @@ const EditProduct = () => {
                     className='form-control'
                 />
             </div>
+            <div className='buttn'>
             <button type='submit' className='btn btn-primary'>Update</button>
+            </div>
+            
         </form>
     </div>
     )

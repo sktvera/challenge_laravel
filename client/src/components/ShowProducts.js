@@ -23,9 +23,12 @@ const ShowProducts = () => {
   }
   return (
     <div>
-        <div className='d-grid gap-2'>
+        <div className='create'>
+            <div className='d-grid gap-2'>
             <Link to="/create" className='btn btn-success btn-lg mt-2 mb-2 text-white'>Create</Link>
+            </div>
         </div>
+        
 
         <table className='table table-striped'>
             <thead className='bg-primary text-white'>
@@ -43,8 +46,17 @@ const ShowProducts = () => {
                         <td> {product.price} </td>    
                         <td> {product.stock} </td>    
                         <td>
-                            <Link to={`/edit/${product.id}`} className='btn btn-warning'>Edit</Link>
-                            <button onClick={ ()=>deleteProduct(product.id) } className='btn btn-danger'>Delete</button>
+                            <div className='gridShow'>
+                                <div className='linkk'>
+                                    <Link to={`/edit/${product.id}`} className='btn btn-warning'>Edit</Link>
+                                </div>
+                                <div>
+                                    <button onClick={ ()=>deleteProduct(product.id) } className='btn btn-danger'>Delete</button>
+                                </div>
+                                
+                                
+                            </div>
+                           
                         </td>
 
                     </tr>
