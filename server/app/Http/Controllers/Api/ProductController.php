@@ -3,21 +3,21 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\product;
+use App\Models\product;  /*import model product*/
 use Illuminate\Http\Request;
 
 
 class ProductController extends Controller
 {
     
-  
-    public function index()
+    //returns the products
+    public function index() 
     {
         $products = Product::all();
         return $products;
     }
 
-    
+    //save the products
     public function store(Request $request)
     {
         $product = new Product();
@@ -28,14 +28,14 @@ class ProductController extends Controller
         $product->save();
     }
 
-    
+    //save the product id
     public function show($id)
     {
         $product = Product::find($id);
         return $product;
     }
 
-   
+   //capture data log to update
     public function update(Request $request, $id)
     {
         $product = Product::findOrFail($request->id);
@@ -47,7 +47,7 @@ class ProductController extends Controller
         return $product;
     }
 
-    
+    //delete product
     public function destroy($id)
     {
         $product = Product::destroy($id);
