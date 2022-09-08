@@ -10,6 +10,7 @@ const CreateProduct = () => {
     const [stock, setStock] = useState(0)
     const navigate = useNavigate()
 
+    //create product
     const store = async (e) => {
         e.preventDefault()
         await axios.post(endpoint, {description: description, price: price, stock: stock})

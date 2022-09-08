@@ -1,7 +1,7 @@
 import './customcss/style.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';//react router dom
 
-//importar nuestros componentes
+//import components
 import ShowProducts from './components/ShowProducts';
 import CreateProduct from './components/CreateProduct';
 import EditProduct from './components/EditProduct';

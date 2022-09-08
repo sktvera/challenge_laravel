@@ -11,12 +11,14 @@ const ShowProducts = () => {
       getAllProducts()
   }, [])
 
+    //all products
   const getAllProducts = async () => {
     const response = await axios.get(`${endpoint}/products`)
     setProducts(response.data)
     //console.log(response.data)
   }
 
+    //delete product
   const deleteProduct = async (id) => {
     await axios.delete(`${endpoint}/product/${id}`)
     getAllProducts()

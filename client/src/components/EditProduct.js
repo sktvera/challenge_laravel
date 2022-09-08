@@ -11,6 +11,7 @@ const EditProduct = () => {
     const navigate = useNavigate()
     const {id} = useParams()
 
+    //edit product
     const update = async (e) => {
         e.preventDefault()
         await axios.put(`${endpoint}${id}`, {
