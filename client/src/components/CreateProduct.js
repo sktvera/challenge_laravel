@@ -17,7 +17,7 @@ const CreateProduct = () => {
     }
     
   return (
-    <div>
+    <div className='grilla'>
         <h3>Create Product</h3>
         <form onSubmit={store}>
             <div className='mb-3'>
@@ -26,7 +26,7 @@ const CreateProduct = () => {
                     value={description}
                     onChange={ (e)=> setDescription(e.target.value)}
                     type='text'
-                    className='form-control'
+                    className='form-control input_select'
                 />
             </div>
             <div className='mb-3'>
